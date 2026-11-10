@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-paper font-body text-ink; }
+h1, h2, h3 { @apply font-head; }
+:focus-visible { outline: 3px solid #52ab98; outline-offset: 2px; }
+
+.btn { @apply inline-flex items-center justify-center rounded-md bg-ink px-5 py-2.5 font-semibold text-white transition-colors hover:bg-[#245764] disabled:cursor-not-allowed disabled:opacity-50; }
+.btn-line { @apply inline-flex items-center justify-center rounded-md border-2 border-ink px-4 py-2 font-semibold text-ink hover:bg-mist/60 disabled:opacity-50; }
+.field { @apply w-full rounded-md border-2 border-mist bg-white px-3 py-2 text-ink placeholder:text-ink/50; }
+
+/* the ticket's side notches */
+.ticket { position: relative; }
+.ticket::before, .ticket::after { content: ''; position: absolute; top: 62%; width: 26px; height: 26px; border-radius: 9999px; background: #f2f2f2; }
+.ticket::before { left: -13px; }
+.ticket::after { right: -13px; }
+
+/* seats held by someone else */
+.seat-held { background-image: repeating-linear-gradient(135deg, #c8d8e4 0 4px, #f2f2f2 4px 8px); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
